@@ -2,6 +2,7 @@ package cafe;
 
 import menu.Item;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,14 +68,15 @@ public class Bill
      */
     public double serviceCharge()
     {
+        DecimalFormat decimalFormat = new DecimalFormat("##.00");
         for(Item item : getItems())
         {
             if(item.isHotFood())
             {
-                return getTotalPrice()/100*20;
+                return Double.valueOf(decimalFormat.format(getTotalPrice()/100*20));
             }
         }
         double totalPrice = getTotalPrice();
-        return (totalPrice/100)*10;
+        return Double.valueOf(decimalFormat.format((totalPrice/100)*10));
     }
 }
