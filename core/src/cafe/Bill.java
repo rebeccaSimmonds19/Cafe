@@ -52,7 +52,7 @@ public class Bill
      * get the total price of all items
      * @return
      */
-    public double getTotalPrice()
+    public double getTotalItemsPrice()
     {
         double totalPrice = 0;
         for(Item item : items)
@@ -73,14 +73,20 @@ public class Bill
         {
             if(item.isHotFood())
             {
-                if((getTotalPrice()/100)*20 >=20)
+                if((getTotalItemsPrice()/100)*20 >=20)
                 {
                     return Double.valueOf(decimalFormat.format(20));
                 }
-                return Double.valueOf(decimalFormat.format((getTotalPrice()/100)*20));
+                return Double.valueOf(decimalFormat.format((getTotalItemsPrice()/100)*20));
             }
         }
-        double totalPrice = getTotalPrice();
+        double totalPrice = getTotalItemsPrice();
         return Double.valueOf(decimalFormat.format((totalPrice/100)*10));
     }
+
+    public double getTotalPrice()
+    {
+        return getTotalItemsPrice() + serviceCharge();
+    }
+
 }
