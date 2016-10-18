@@ -8,6 +8,7 @@ public class Coffee implements Item
 {
     final double price = 1;
     final String description = "hot drink";
+    final boolean hotFood = false;
 
     /**
      * default constructor
@@ -31,6 +32,14 @@ public class Coffee implements Item
      */
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * is it hot food
+     * @return boolean
+     */
+    public boolean isHotFood() {
+        return hotFood;
     }
 
     /**

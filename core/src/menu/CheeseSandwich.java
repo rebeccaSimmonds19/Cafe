@@ -8,6 +8,7 @@ public class CheeseSandwich implements Item
 {
     final double price = 2;
     final String description = "cold food";
+    final boolean hotFood = false;
 
     /**
      * default constructor
@@ -31,6 +32,14 @@ public class CheeseSandwich implements Item
      */
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * is it hot food
+     * @return boolean
+     */
+    public boolean isHotFood() {
+        return hotFood;
     }
 
     /**

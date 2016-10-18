@@ -67,8 +67,14 @@ public class Bill
      */
     public double serviceCharge()
     {
+        for(Item item : getItems())
+        {
+            if(item.isHotFood())
+            {
+                return getTotalPrice()/100*20;
+            }
+        }
         double totalPrice = getTotalPrice();
         return (totalPrice/100)*10;
     }
-
 }

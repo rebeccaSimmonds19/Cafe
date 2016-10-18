@@ -7,5 +7,6 @@ public interface Item
 {
     public double getPrice();
     public String getDescription();
+    public boolean isHotFood();
 
 }

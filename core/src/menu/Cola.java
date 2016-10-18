@@ -8,6 +8,7 @@ public class Cola implements Item
 {
     final double price = 0.5;
     final String description = "cold drink";
+    final boolean hotFood = false;
 
     /**
      * default constructor
@@ -32,6 +33,14 @@ public class Cola implements Item
      */
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * is hot food
+     * @return boolean
+     */
+    public boolean isHotFood() {
+        return hotFood;
     }
 
     /**
