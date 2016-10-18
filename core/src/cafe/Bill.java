@@ -32,4 +32,33 @@ public class Bill
         return items;
     }
 
+    /**
+     * get the prices of all items in a list
+     * @return
+     */
+    public List<Double> getItemPrices()
+    {
+        List<Double> prices = new ArrayList<Double>();
+
+        for(Item item : items)
+        {
+            prices.add(item.getPrice());
+        }
+        return prices;
+    }
+
+    /**
+     * get the total price of all items
+     * @return
+     */
+    public double getTotalPrice()
+    {
+        double totalPrice = 0;
+        for(Item item : items)
+        {
+            totalPrice +=item.getPrice();
+        }
+        return totalPrice;
+    }
+
 }
