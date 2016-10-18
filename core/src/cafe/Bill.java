@@ -61,4 +61,14 @@ public class Bill
         return totalPrice;
     }
 
+    /**
+     * calculates the service charge
+     * @return double
+     */
+    public double serviceCharge()
+    {
+        double totalPrice = getTotalPrice();
+        return (totalPrice/100)*10;
+    }
+
 }
