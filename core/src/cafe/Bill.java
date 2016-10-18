@@ -73,7 +73,11 @@ public class Bill
         {
             if(item.isHotFood())
             {
-                return Double.valueOf(decimalFormat.format(getTotalPrice()/100*20));
+                if((getTotalPrice()/100)*20 >=20)
+                {
+                    return Double.valueOf(decimalFormat.format(20));
+                }
+                return Double.valueOf(decimalFormat.format((getTotalPrice()/100)*20));
             }
         }
         double totalPrice = getTotalPrice();
